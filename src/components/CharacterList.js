@@ -18,7 +18,6 @@ export default function CharacterList(props) {
         console.error('Server Error', error);
       });
     }
-
     getCharacters();
   }, []);
 
@@ -28,9 +27,9 @@ export default function CharacterList(props) {
       <div> 
         <h2>Characters</h2>
         <div>
-        {characters.map(character => (
-        <CharacterDetails key={character.id} character={character} />
-        ))}
+          {characters.map(character => (
+          <CharacterDetails key={character.id} character={character} />
+          ))}
         </div>
       </div>
     </section>

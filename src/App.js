@@ -1,7 +1,13 @@
 import React from "react";
 import Header from "./components/Header.js";
-import { Route } from 'react-router-dom';
-import CharacterList from "./components/CharacterList"
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
+import WelcomePage from "./components/WelcomePage";
+import CharacterList from "./components/CharacterList";
 
 
 export default function App() {
@@ -9,15 +15,23 @@ export default function App() {
     <main>
       <Header />
 
-      <div>
-        <Route 
-          exact
-          path = '/'
-          component = {CharacterList}
-        />
-      </div>
-    </main>
+      <Router>
+        <Link to="/">Welcome Page</Link>
+        <Link to="/characterlist">Character List</Link>  
 
-    
+        <hr />
+
+        <Switch>
+          <Route exact path="/">
+            <WelcomePage />
+          </Route>
+
+          <Route path="/characterlist">
+            <CharacterList />
+          </Route>
+        </Switch>    
+      </Router>     
+
+    </main>    
   );
 }
