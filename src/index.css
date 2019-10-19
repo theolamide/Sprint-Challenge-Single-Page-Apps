@@ -34,15 +34,27 @@ main {
   margin: 0 auto;
 } */
 
-header h1 {
+header h1, h2 {
   text-align: center;
+  font-family: 'Rubik', sans-serif;
 }
 
 .links{
   display: flex;
   justify-content: space-around;
+  flex-wrap: wrap;
+
 }
 
-Link{
+a {
   text-decoration: none;
+  color: black;
+}
+
+.main-img {
+  width: 40vw;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 2rem;
 }

@@ -12,10 +12,12 @@ import CharacterList from "./components/CharacterList";
 // import "/index.css";
 
 const HeaderLink = styled.span`
-  background: ${props => (props.primary ? "#FFF" : "#efe8e8")};
-  color: ${props => (props.primary ? "#efe8e8" : "#FFF")};
+  background: ${props => (props.primary ? "#FFF" : "#eafcfc")};
+  color: ${props => (props.primary ? "#000000" : "#000000")};
   transition: 0.2s ease-in;
   text-decoration: none;
+  padding: 1rem;
+  border-radius: 1rem;
   border: ${props =>
     props.primary ? "2px solid #99f3eb" : "2px solid #efe8e8"};
   &:hover {
