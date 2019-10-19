@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from 'axios';
+import SearchForm from "./SearchForm";
 
 export default function CharacterList(props) {
   // TODO: Add useState to track data from useEffect
@@ -11,8 +12,9 @@ export default function CharacterList(props) {
     const getCharacters = () => {
       axios.get('https://rickandmortyapi.com/api/character/')
       .then(response => {
-        console.log(response.data);
+        // console.log(response.data);
         setCharacters(response.data.results);
+        
       })
       .catch(error => {
         console.error('Server Error', error);
@@ -26,6 +28,7 @@ export default function CharacterList(props) {
       {/* <h2>TODO: `array.map()` over your state here!</h2> */}
       <div> 
         <h2>Characters</h2>
+        <SearchForm characters={characters}/>
         <div>
           {characters.map(character => (
           <CharacterDetails key={character.id} character={character} />
@@ -36,6 +39,8 @@ export default function CharacterList(props) {
   );
 }
 
+
+
 function CharacterDetails({character}) {
   const{name,species,status} = character;
   return(
@@ -45,4 +50,5 @@ function CharacterDetails({character}) {
       <p> Status: {status} </p>
     </div>
   );
-}
+};
+

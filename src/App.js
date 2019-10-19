@@ -29,7 +29,8 @@ export default function App() {
           <Route path="/characterlist">
             <CharacterList />
           </Route>
-        </Switch>    
+        </Switch>
+           
       </Router>     
 
     </main>    
