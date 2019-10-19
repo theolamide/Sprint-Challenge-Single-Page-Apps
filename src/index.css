@@ -37,3 +37,12 @@ main {
 header h1 {
   text-align: center;
 }
+
+.links{
+  display: flex;
+  justify-content: space-around;
+}
+
+Link{
+  text-decoration: none;
+}

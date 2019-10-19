@@ -28,7 +28,9 @@ export default function CharacterList(props) {
       {/* <h2>TODO: `array.map()` over your state here!</h2> */}
       <div> 
         <h2>Characters</h2>
+        <hr />
         <SearchForm characters={characters}/>
+        <hr />
         <div>
           {characters.map(character => (
           <CharacterDetails key={character.id} character={character} />
